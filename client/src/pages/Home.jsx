@@ -195,16 +195,6 @@ export default function Home() {
         )}
       </div>
 
-      {/* ── Footer ── */}
-      <footer className="footer">
-        <span className="footer-brand">RentWise</span>
-        <div className="footer-links">
-          <a href="#">About</a>
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Contact</a>
-        </div>
-      </footer>
     </>
   )
 }
