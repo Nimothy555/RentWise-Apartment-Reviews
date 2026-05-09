@@ -14,7 +14,7 @@ export default function Footer() {
       fontSize: '0.875rem',
       color: 'var(--text-muted)',
     }}>
-      <span>© {new Date().getFullYear()} RentWise. Built in Boston.</span>
+      <span>© {new Date().getFullYear()} RentWise</span>
       <div style={{ display: 'flex', gap: '1.5rem' }}>
         <Link to="/about">About</Link>
         <Link to="/privacy">Privacy</Link>
