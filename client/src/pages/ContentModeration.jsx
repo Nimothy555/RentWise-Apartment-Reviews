@@ -31,12 +31,12 @@ export default function ContentModeration() {
         <h2 style={{ fontSize: '1.2rem', marginBottom: '0.75rem' }}>2. Grounds for Denial</h2>
         <p>A review may be denied or removed for any of the following reasons:</p>
         <ul style={{ marginTop: '0.75rem', paddingLeft: '1.5rem', lineHeight: '2.2' }}>
-          <li><strong>Not a genuine experience</strong> — review appears fabricated, paid for, or submitted by someone who did not live at the property</li>
-          <li><strong>Hate speech or discrimination</strong> — content targeting individuals or groups based on race, gender, religion, nationality, disability, or other protected characteristics</li>
-          <li><strong>Harassment or threats</strong> — personal attacks directed at landlords, property managers, or other tenants</li>
-          <li><strong>Private information</strong> — includes names, phone numbers, addresses, or other personally identifying details of individuals</li>
-          <li><strong>Spam or off-topic content</strong> — content unrelated to the rental experience, or submitted multiple times</li>
-          <li><strong>Illegal content</strong> — anything that violates applicable law</li>
+          <li><strong>Not a genuine experience:</strong> review appears fabricated, paid for, or submitted by someone who did not live at the property</li>
+          <li><strong>Hate speech or discrimination:</strong> content targeting individuals or groups based on race, gender, religion, nationality, disability, or other protected characteristics</li>
+          <li><strong>Harassment or threats:</strong> personal attacks directed at landlords, property managers, or other tenants</li>
+          <li><strong>Private information:</strong> includes names, phone numbers, addresses, or other personally identifying details of individuals</li>
+          <li><strong>Spam or off-topic content:</strong> content unrelated to the rental experience, or submitted multiple times</li>
+          <li><strong>Illegal content:</strong> anything that violates applicable law</li>
         </ul>
 
         <Divider />
