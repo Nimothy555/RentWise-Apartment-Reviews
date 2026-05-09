@@ -1,3 +1,9 @@
+const Divider = () => (
+  <div style={{ textAlign: 'center', margin: '1.75rem 0', color: 'var(--text-muted)', letterSpacing: '0.4em', fontSize: '0.75rem' }}>
+    ···
+  </div>
+)
+
 export default function ContentModeration() {
   return (
     <div className="page">
@@ -11,7 +17,7 @@ export default function ContentModeration() {
           standards all submissions must meet.
         </p>
 
-        <hr style={{ margin: '1.5rem 0', borderColor: 'var(--border)' }} />
+        <Divider />
 
         <h2 style={{ fontSize: '1.2rem', marginBottom: '0.75rem' }}>1. What We Moderate</h2>
         <p>
@@ -20,7 +26,7 @@ export default function ContentModeration() {
           submissions to ensure compliance with our standards.
         </p>
 
-        <hr style={{ margin: '1.5rem 0', borderColor: 'var(--border)' }} />
+        <Divider />
 
         <h2 style={{ fontSize: '1.2rem', marginBottom: '0.75rem' }}>2. Grounds for Denial</h2>
         <p>A review may be denied or removed for any of the following reasons:</p>
@@ -33,7 +39,7 @@ export default function ContentModeration() {
           <li><strong>Illegal content</strong> — anything that violates applicable law</li>
         </ul>
 
-        <hr style={{ margin: '1.5rem 0', borderColor: 'var(--border)' }} />
+        <Divider />
 
         <h2 style={{ fontSize: '1.2rem', marginBottom: '0.75rem' }}>3. The Denial Process</h2>
         <p>
@@ -43,7 +49,7 @@ export default function ContentModeration() {
           with this policy.
         </p>
 
-        <hr style={{ margin: '1.5rem 0', borderColor: 'var(--border)' }} />
+        <Divider />
 
         <h2 style={{ fontSize: '1.2rem', marginBottom: '0.75rem' }}>4. Appeals</h2>
         <p>
@@ -54,7 +60,7 @@ export default function ContentModeration() {
           address and a brief explanation. We aim to respond within 3 to 5 business days.
         </p>
 
-        <hr style={{ margin: '1.5rem 0', borderColor: 'var(--border)' }} />
+        <Divider />
 
         <h2 style={{ fontSize: '1.2rem', marginBottom: '0.75rem' }}>5. Repeat Violations</h2>
         <p>
@@ -62,7 +68,7 @@ export default function ContentModeration() {
           account suspended or permanently removed from the platform.
         </p>
 
-        <hr style={{ margin: '1.5rem 0', borderColor: 'var(--border)' }} />
+        <Divider />
 
         <h2 style={{ fontSize: '1.2rem', marginBottom: '0.75rem' }}>6. Changes to This Policy</h2>
         <p>
@@ -70,7 +76,7 @@ export default function ContentModeration() {
           use of RentWise after updates are posted constitutes acceptance of the revised policy.
         </p>
 
-        <hr style={{ margin: '1.5rem 0', borderColor: 'var(--border)' }} />
+        <Divider />
 
         <p>
           Questions? Reach us at{' '}
