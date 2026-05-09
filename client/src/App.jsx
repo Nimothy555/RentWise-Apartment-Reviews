@@ -18,6 +18,7 @@ import About from './pages/About'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import Contact from './pages/Contact'
+import ContentModeration from './pages/ContentModeration'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -45,6 +46,7 @@ export default function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/moderation" element={<ContentModeration />} />
         </Routes>
       </main>
       <Footer />
