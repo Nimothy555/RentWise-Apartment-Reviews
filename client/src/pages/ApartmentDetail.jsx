@@ -369,7 +369,7 @@ function ReviewCard({ review, apartmentId, currentUserId, isLandlordOwner, onDel
         )}
 
         {onDelete && (
-          <button onClick={handleDelete} className="btn-link btn-danger" style={{ fontSize: '0.85rem' }}>Delete my review</button>
+          <button onClick={handleDelete} className="btn-link" style={{ fontSize: '0.85rem', color: 'var(--danger)' }}>Delete my review</button>
         )}
 
         {currentUserId && (
