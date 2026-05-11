@@ -361,6 +361,12 @@ setTimeout(() => {
 
           db.run(
             `INSERT INTO users (first_name, last_name, email, password, role, is_verified) VALUES (?, ?, ?, ?, ?, ?)`,
+            ['Parth', 'Patel', 'p.patel015@umb.edu', '$2b$10$PLACEHOLDER_NOT_FOR_LOGIN', 'admin', 1],
+            function (err) {
+              if (err) { console.error('Admin seed error:', err); return }
+
+          db.run(
+            `INSERT INTO users (first_name, last_name, email, password, role, is_verified) VALUES (?, ?, ?, ?, ?, ?)`,
             ['Demo', 'Renter', 'renter@rentwise.com', '$2b$10$PLACEHOLDER_NOT_FOR_LOGIN', 'renter', 1],
             function (err) {
               if (err) { console.error('Renter seed error:', err); return }
@@ -403,6 +409,8 @@ setTimeout(() => {
                   })
                 })
               })
+            }
+          )
             }
           )
         }
