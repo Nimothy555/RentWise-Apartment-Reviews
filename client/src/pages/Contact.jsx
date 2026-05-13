@@ -3,15 +3,31 @@ import { useState } from 'react'
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    window.location.href = `mailto:teamrentwise@outlook.com?subject=Message from ${form.name}&body=${encodeURIComponent(form.message)}%0A%0AFrom: ${form.name} (${form.email})`
-    setSubmitted(true)
+    setError('')
+    setLoading(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'Failed to send message')
+      setSubmitted(true)
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -36,7 +52,7 @@ export default function Contact() {
 
         {submitted ? (
           <div style={{ padding: '1rem', background: 'var(--sage-light)', borderRadius: '8px' }}>
-            Thanks for reaching out! Your email client should have opened. We'll get back to you soon.
+            Thanks for reaching out! We'll get back to you within 2 to 3 business days.
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="auth-form">
@@ -56,7 +72,10 @@ export default function Contact() {
                 className="input" placeholder="What's on your mind?" rows={5} required
                 style={{ resize: 'vertical' }} />
             </label>
-            <button type="submit" className="btn btn-full">Send Message</button>
+            {error && <p style={{ color: 'var(--error, #c0392b)', fontSize: '0.9rem' }}>{error}</p>}
+            <button type="submit" className="btn btn-full" disabled={loading}>
+              {loading ? 'Sending…' : 'Send Message'}
+            </button>
           </form>
         )}
       </div>

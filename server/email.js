@@ -122,4 +122,22 @@ async function sendVerificationDecisionEmail({ user, apartmentName, approved, de
   })
 }
 
-module.exports = { sendVerificationEmail, sendPasswordResetEmail, sendVerificationSubmissionNotification, sendVerificationReceivedEmail, sendVerificationDecisionEmail }
+async function sendContactEmail({ name, email, message }) {
+  await transporter.sendMail({
+    from: `"RentWise" <${process.env.GMAIL_USER}>`,
+    to: 'teamrentwise@outlook.com',
+    replyTo: email,
+    subject: `Message from ${name}`,
+    html: `
+      <div style="font-family:'DM Sans',sans-serif;max-width:560px;margin:auto;padding:32px;background:#FAFAF7;">
+        <h2 style="font-family:'DM Serif Display',Georgia,serif;color:#2D5016;font-weight:400;">New Contact Message</h2>
+        <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+          <tr><td style="padding:8px 0;color:#555;width:80px;">From</td><td style="padding:8px 0;">${name} &lt;${email}&gt;</td></tr>
+        </table>
+        <p style="margin-top:16px;white-space:pre-wrap;">${message}</p>
+      </div>
+    `,
+  })
+}
+
+module.exports = { sendVerificationEmail, sendPasswordResetEmail, sendVerificationSubmissionNotification, sendVerificationReceivedEmail, sendVerificationDecisionEmail, sendContactEmail }

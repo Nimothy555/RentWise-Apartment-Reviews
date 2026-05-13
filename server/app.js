@@ -12,6 +12,7 @@ const voteRoutes = require('./routes/votes')
 const replyRoutes = require('./routes/replies')
 const flagRoutes = require('./routes/flags')
 const adminRoutes = require('./routes/admin')
+const { sendContactEmail } = require('./email')
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -34,6 +35,18 @@ app.use('/api/votes', voteRoutes)
 app.use('/api/replies', replyRoutes)
 app.use('/api/flags', flagRoutes)
 app.use('/api/admin', adminRoutes)
+
+app.post('/api/contact', async (req, res) => {
+  const { name, email, message } = req.body
+  if (!name || !email || !message) return res.status(400).json({ error: 'All fields are required' })
+  try {
+    await sendContactEmail({ name, email, message })
+    res.json({ message: 'Message sent' })
+  } catch (err) {
+    console.error('Contact email error:', err.message)
+    res.status(500).json({ error: 'Failed to send message. Please try again.' })
+  }
+})
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', env: isProd ? 'production' : 'development' }))
 
