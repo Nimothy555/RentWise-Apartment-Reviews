@@ -99,6 +99,9 @@ export const api = {
   getMyProfile: () => request('/users/me'),
   updateDisplayName: (default_display_name) => request('/users/me/display-name', { method: 'PATCH', body: JSON.stringify({ default_display_name }) }),
 
+  // Insights
+  getInsights: () => request('/insights'),
+
   // Admin
   getAdminVerifications: () => request('/admin/verifications'),
   getSuspiciousReviews: () => request('/admin/reviews/suspicious'),

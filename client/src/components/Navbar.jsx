@@ -33,6 +33,7 @@ export default function Navbar() {
 
         <div className={`nav-links${menuOpen ? ' nav-links--open' : ''}`}>
           <Link to="/" onClick={close}>Browse</Link>
+          <Link to="/insights" onClick={close}>Insights</Link>
           {user ? (
             <>
               <Link to="/dashboard" onClick={close}>Dashboard</Link>

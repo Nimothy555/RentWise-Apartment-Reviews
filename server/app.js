@@ -12,6 +12,7 @@ const voteRoutes = require('./routes/votes')
 const replyRoutes = require('./routes/replies')
 const flagRoutes = require('./routes/flags')
 const adminRoutes = require('./routes/admin')
+const insightsRoutes = require('./routes/insights')
 const { sendContactEmail } = require('./email')
 
 const app = express()
@@ -35,6 +36,7 @@ app.use('/api/votes', voteRoutes)
 app.use('/api/replies', replyRoutes)
 app.use('/api/flags', flagRoutes)
 app.use('/api/admin', adminRoutes)
+app.use('/api/insights', insightsRoutes)
 
 app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body
