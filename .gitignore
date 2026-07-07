@@ -1,0 +1,40 @@
+node_modules/
+.env
+*.db
+.DS_Store
+dist/
+
+cat >> .gitignore << 'EOF'
+
+# ── Additional scratch / stray files (added during cleanup) ──
+.claude/
+*.bak
+client/nul
+New Text Document.txt
+SETUP
+tmpgen/
+docs/
+ec10-2.html
+ec10-2.pdf
+results.html
+property.html
+index.html
+rentstyles.css
+topdf.js
+unpacked/
+unpacked-ref/
+unpacked_check/
+UI Rendering.png
+QR Code Free Survey Poster.jpg
+client/public/QR Code Free Survey Poster.jpg
+server/rentwise_exports/
+server/rentwise_exports.zip
+server/extract.py
+EOF
+# ── Terraform ──
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+crash.log
+*.tfvars

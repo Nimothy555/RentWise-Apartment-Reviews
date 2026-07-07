@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rentwise
+  labels:
+    app: rentwise
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rentwise
+  template:
+    metadata:
+      labels:
+        app: rentwise
+    spec:
+      containers:
+        - name: rentwise
+          image: apartment-reviews-app:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: PORT
+              value: "3000"
